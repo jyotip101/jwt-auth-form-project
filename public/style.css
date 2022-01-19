@@ -1,11 +1,16 @@
 :root {
-  --main-color: #222;
+  --main-color: #191c2f;
   --bg-color: #0f32a72a;
   --border-Radius: 0.25rem;
   --letter-Spacing: 1px;
-  --transition: 0.3s ease-in-out all;
-  --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  --transition: 0.3s linear all;
+
+  --box-shadow-1: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  --box-shadow-2: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
   --font-famaly: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -34,12 +39,14 @@ body {
   border-radius: var(--border-Radius);
   max-width: 700px;
   padding: 1rem;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-1);
   letter-spacing: var(--letter-Spacing);
+  transition: var(--transition);
+}
+.form-section:hover {
+  box-shadow: var(--box-shadow-2);
 }
 
-/* @media screen and (max-width: 400px) {
-} */
 .form-section h1 {
   margin: 1rem;
 }
@@ -55,7 +62,7 @@ body {
 }
 .contorl-input .name-field,
 .contorl-input .password-field {
-  border: #000 2px solid;
+  border: var(--main-color) 2px solid;
   border-radius: 5px;
   padding: 0.5rem;
 }
@@ -72,4 +79,34 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: var(--transition);
+}
+.btn-field:hover {
+  background-color: #121212;
+}
+
+/* media query */
+
+@media screen and (max-width: 430px) {
+  .contorl-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+  }
+  .contorl-input label {
+    margin: 1rem 1rem 0.3rem 0;
+  }
+
+  .contorl-input .name-field,
+  .contorl-input .password-field {
+    width: 90%;
+  }
+  .btn-field {
+    margin: 2.5rem 1rem 1rem;
+  }
+
+  .form-section h1 {
+    font-size: 150%;
+  }
 }
