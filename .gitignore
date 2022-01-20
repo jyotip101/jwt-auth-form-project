@@ -1,1 +1,8 @@
 app.js
+/node_modules
+/middleware
+/error
+/controllers
+/route
+package-lock.json
+package.json

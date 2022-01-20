@@ -28,8 +28,9 @@ body {
   padding: 0;
 }
 
-.form-section {
-  margin: 10% auto auto auto;
+.form-section,
+.container {
+  margin: 4% auto auto auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,12 +44,24 @@ body {
   letter-spacing: var(--letter-Spacing);
   transition: var(--transition);
 }
+
+.container {
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+}
 .form-section:hover {
   box-shadow: var(--box-shadow-2);
 }
-
+h4 {
+  font-size: 150%;
+  margin: 0;
+  color: var(--main-color);
+}
 .form-section h1 {
   margin: 1rem;
+  color: var(--main-color);
 }
 
 .contorl-input {
@@ -84,7 +97,15 @@ body {
 .btn-field:hover {
   background-color: #121212;
 }
-
+.error-contant,
+.token {
+  color: var(--main-color);
+  font-size: 14px;
+  display: none;
+}
+.success {
+  color: var(--main-color);
+}
 /* media query */
 
 @media screen and (max-width: 430px) {
